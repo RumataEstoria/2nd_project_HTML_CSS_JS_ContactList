@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact List</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- input record -->
+        <div class="record-input">
+            <h2>Adding a new contact</h2>
+            <div class="entry-form">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Name">
+
+                    <label for="vacancy">Vacancy</label>
+                    <input type="text" id="vacancy" placeholder="Vacancy">
+
+                    <label for="contact-num">Contact Number</label>
+                    <input type="tel" id="contact-num" placeholder="Phone X-XXX-XXX-XX-XX" title="The following formats are supported: 
+                    X-XXX-XXX-XX-XX
+                    X XXX XXX XXXX
+                    XXXXXXXXXXX">
+                </form>
+
+                <!-- alert message -->
+                <span class="message"></span>
+
+                <div class="input-buttons">
+                    <button type="submit" id="submit-button">
+                        <span>
+                            <i class="fas fa-plus"></i>
+                        </span> Add Contact
+                    </button>
+
+                    <button type="button" id="cancel-button">
+                        <span>
+                            <i class="fas fa-times"></i>
+                        </span> Cancel
+                    </button>
+
+                    <button type="button" id="search-button">
+                        <span>
+                            <i class="fas fa-search"></i>
+                        </span> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- display record -->
+        <div class="record-display">
+            <h2>Available Contacts: </h2>
+            <!-- reset button -->
+            <button type="button" id="reset-button">
+                Reset
+            </button>
+
+            <div class="record-container">
+
+            </div>
+        </div>
+
+        <!-- Search Modal -->
+        <div id="search-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeSearchModal()">&times;</span>
+                <input type="text" id="search-input" placeholder="Search...">
+                <div id="search-results"></div>
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeEditModal()">&times;</span>
+                <input type="text" id="edit-name" placeholder="Name">
+                <input type="text" id="edit-vacancy" placeholder="Vacancy">
+                <input type="text" id="edit-contact-num" placeholder="Contact Number">
+                <button id="save-edit-button">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
